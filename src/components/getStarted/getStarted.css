@@ -1,0 +1,122 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 800px;
+  overflow: hidden;
+}
+
+.background-1-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures video covers the container */
+  z-index: -1; /* Keeps the video in the background */
+}
+
+.get-started-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1; /* Places content above the video */
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.get-started-container .logo {
+  margin: 40px;
+  width: 150px;
+  height: 150px;
+  animation: fadeInScale 2s ease-in-out forwards;
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.get-started-container h1 {
+  text-align: center;
+  font-size: 70px;
+  width: 600px;
+  color: #d69200;
+  text-shadow: 2px 2px 15px #3756e3;
+  animation: slideIn 2s ease-in-out forwards;
+}
+
+.get-started-container p {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  margin-bottom: 0;
+  color: white;
+  animation: slideIn 2s ease-in-out forwards;
+}
+
+.get-started-container p .down-icon {
+  width: 20px;
+  animation: slideIn 2s ease-in-out forwards;
+}
+
+.get-started-container button {
+  width: 200px;
+  height: 50px;
+  margin: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d69200;
+  border: none;
+  color: white;
+  animation: slideIn 2s ease-in-out forwards;
+  cursor: pointer;
+}
+
+.get-started-container button .double-right-icon {
+  width: 20px;
+  animation: slideIn 2s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 426px) {
+  .get-started-container .logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .get-started-container h1 {
+    font-size: 50px;
+    width: 400px;
+  }
+
+  .get-started-container p {
+    font-size: 20px;
+  }
+
+  .get-started-container button {
+    width: 180px;
+    height: 45px;
+    cursor: pointer;
+  }
+}
