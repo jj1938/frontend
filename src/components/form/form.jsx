@@ -73,7 +73,7 @@ const Form = () => {
 
     setTimeout(() => {
       setShowAlert(false);
-    }, 3000);
+    }, 500000);
   };
 
   const handleClick = () => {
@@ -287,25 +287,28 @@ const styles = {
     cursor: "pointer",
   },
   alertBox: {
-    position: "absolute",
-    top: "400px",
-    left: "540px",
+    position: "fixed",
+    top: "200px" /* Distance from the top */,
+    left: "50%",
+    // top: "800px",
+    // left: "540px",
     backgroundColor: "#faedc3",
-
-    color: "red",
+    color: "black",
     padding: "20px",
-    borderRadius: "5px",
+    borderRadius: "20px",
     boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-    maxWidth: "400px",
-    height: "200px",
+    width: "430px",
+    height: "250px",
     margin: "20px auto",
     textAlign: "center",
-    border: "1px solid red",
+    // border: "1px solid black",
+    border: "none",
+    zIndex: "9999",
+    transform: "translateX(-50%)",
   },
   alertTitle: {
     display: "flex",
     flexDirection: "column",
-
     alignItems: "center",
     justifyContent: "center",
     margin: "5px 5px",
@@ -318,9 +321,9 @@ const styles = {
   },
   closeButton: {
     backgroundColor: "red",
-    position: "absolute",
-    top: "190px",
-    right: "15px",
+    // position: "absolute",
+    // top: "190px",
+    // right: "15px",
     color: "white",
     border: "none",
     padding: "10px 20px",
