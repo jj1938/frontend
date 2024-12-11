@@ -45,7 +45,7 @@ const Form = () => {
   };
 
   const validatePhone = (value) => {
-    const regex = /^[0-9]{6,15}$/; // Modify as needed for validation rules
+    const regex = /^[0-9]{6,15}$/;
     setIsPhoneValid(regex.test(value.replace(/\D/g, ""))); // Remove non-digits for validation
   };
 
@@ -73,7 +73,7 @@ const Form = () => {
 
     setTimeout(() => {
       setShowAlert(false);
-    }, 500000);
+    }, 500000000);
   };
 
   const handleClick = () => {
@@ -199,7 +199,7 @@ const Form = () => {
             className="submit-button"
             disabled={!isPhoneValid || !isEmailValid || !firstName || !lastName}
           >
-            Enter The Giveaway
+            Save
           </button>
 
           <p
@@ -224,7 +224,7 @@ const Form = () => {
               }}
             >
               <p style={styles.alertTitle}>
-                Success!
+                Congratulations!
                 <img
                   src={confetty}
                   style={{
@@ -257,20 +257,20 @@ const Form = () => {
                 />
               </p>
             </div>
-
-            <button
-              style={styles.closeButton}
-              onClick={() => setShowAlert(false)}
-            >
-              Close
+            <div className="details-giveaway">
+              <p className="link-button-container">
+                Dear followers, the results of the Trump Coin Giveaway will be
+                announced on our official Telegram channel
+              </p>
+              <p className="link-button-container">
+                Follow it for the latest updates!
+              </p>
+            </div>
+            <button type="submit" onClick={handleClick} className="link-button">
+              Join The Giveaway
             </button>
           </div>
         )}
-      </div>
-      <div className="link-button-container">
-        <button type="submit" onClick={handleClick} className="link-button">
-          Enter The Giveaway
-        </button>
       </div>
     </div>
   );
@@ -288,21 +288,18 @@ const styles = {
   },
   alertBox: {
     position: "fixed",
-    top: "200px" /* Distance from the top */,
+    top: "150px",
     left: "50%",
-    // top: "800px",
-    // left: "540px",
-    backgroundColor: "#faedc3",
+    backgroundColor: "white",
     color: "black",
     padding: "20px",
     borderRadius: "20px",
     boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-    width: "430px",
-    height: "250px",
+    width: "530px",
+    height: "390px",
     margin: "20px auto",
     textAlign: "center",
-    // border: "1px solid black",
-    border: "none",
+    border: "2px solid black",
     zIndex: "9999",
     transform: "translateX(-50%)",
   },
@@ -321,9 +318,6 @@ const styles = {
   },
   closeButton: {
     backgroundColor: "red",
-    // position: "absolute",
-    // top: "190px",
-    // right: "15px",
     color: "white",
     border: "none",
     padding: "10px 20px",
